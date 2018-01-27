@@ -3,6 +3,11 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import {NbLayoutModule, NbSidebarModule, NbSidebarService, NbThemeModule} from '@nebular/theme';
+import { TestComponent } from './test/test.component';
+import {SomeModule} from './some/some.module';
+import {HttpClientModule} from '@angular/common/http';
+import {Router} from '@angular/router';
 
 
 @NgModule({
@@ -10,9 +15,13 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    NbThemeModule.forRoot({name: 'default'}),
+    SomeModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
